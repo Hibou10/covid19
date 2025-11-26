@@ -13,7 +13,7 @@ This dashboard provides a clear overview of the pandemic’s impact by country a
 
 
 ```sql countries
-select distinct country from cvd.covid order by country
+select distinct country from cvd_covid order by country
 ```
 
 
@@ -43,7 +43,7 @@ select distinct country from cvd.covid order by country
     incidence,
     vaccinations,
     deaths
-  from cvd.covid
+  from cvd_covid
   where
     country = '${inputs.country.value}'
   and (
@@ -91,7 +91,7 @@ select
 
   '/country/' || country || '?metric=' || '${inputs.metric.value}' as link
 
-from cvd.covid
+from cvd_covid
 where
   ('${inputs.year.value}' = '%' or year = cast('${inputs.year.value}' as int))
 group by country
