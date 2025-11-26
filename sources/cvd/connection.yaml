@@ -1,5 +1,4 @@
 name: cvd
-type: sqlite
 type: duckdb
 options:
   filename: db.db
